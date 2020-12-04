@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static long func(int my_savings){
+        my_savings+=10000;
+        my_savings*=2;
+        my_savings+=30000;
+        my_savings++;
+        my_savings/=2;
+        return my_savings;
+    }
+
+    public static void main(String[] args) {
+       float temperature;
+       int age;
+       double a,b;
+        System.out.print("Please enter temperature: ");
+        Scanner t = new Scanner(System.in);
+        temperature = t.nextFloat();
+       if(temperature>36.5)
+           System.out.println("Hot");
+       else
+           System.out.println("Cold");
+        System.out.print("Please enter your age: ");
+        Scanner ag = new Scanner(System.in);
+        age = ag.nextInt();
+       if(age>18)
+           System.out.println("Grown up");
+        if(age<13)
+            System.out.println("Child");
+        System.out.print("Enter any number: ");
+        Scanner num1 = new Scanner(System.in);
+        a = num1.nextDouble();
+        System.out.print("Enter another number: ");
+        Scanner num2 = new Scanner(System.in);
+        b = num2.nextDouble();
+        if (a>b)
+            System.out.println("a is bigger "+a);
+        else
+            System.out.println("b is bigger"+b);
+        }
+    }
