@@ -2,15 +2,6 @@ package com.company;
 import java.util.Scanner;
 public class Main {
 
-    public static long func(int my_savings){
-        my_savings+=10000;
-        my_savings*=2;
-        my_savings+=30000;
-        my_savings++;
-        my_savings/=2;
-        return my_savings;
-    }
-
     public static void main(String[] args) {
        float temperature;
        int age;
