@@ -3,15 +3,54 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int a, b, c;
-        System.out.print("Please enter first number ");
+        int a, b, c,count=0;
+        float x, y, z;
+        //both numbers are zero or not
+        System.out.print("Please enter number: ");
         Scanner num1 = new Scanner(System.in);
         a = num1.nextInt();
-        System.out.print("Please enter first number ");
+        System.out.print("Please enter number: ");
         Scanner num2 = new Scanner(System.in);
         b = num2.nextInt();
-        System.out.print("Please enter first number ");
+        if (a == 0 && b == 0)
+            System.out.println("Are both zero");
+        else
+            System.out.println("both numbers are not zero");
+        //similar or diff
+        System.out.print("Please enter number: ");
+        a = num1.nextInt();
+        System.out.print("Please enter number: ");
+        b = num2.nextInt();
+        System.out.print("Please enter number: ");
         Scanner num3 = new Scanner(System.in);
+        c = num3.nextInt();
+        if (a == b && b == c)
+            System.out.println("Similar.");
+        else
+            System.out.println("Diff.");
+        //how many possitive numbers
+        System.out.print("Please enter number: ");
+        Scanner num4 = new Scanner(System.in);
+        x = num4.nextFloat();
+        System.out.print("Please enter number: ");
+        Scanner num5 = new Scanner(System.in);
+        y = num5.nextFloat();
+        System.out.print("Please enter number: ");
+        Scanner num6 = new Scanner(System.in);
+        z = num6.nextFloat();
+        if(x>=0)
+            count++;
+        if(y>=0)
+            count++;
+        if(z>=0)
+            count++;
+        System.out.println(count+" positive numbers.");
+        //who is the biggest number
+        System.out.print("Please enter number: ");
+        a = num1.nextInt();
+        System.out.print("Please enter number: ");
+        b = num2.nextInt();
+        System.out.print("Please enter number: ");
         c = num3.nextInt();
         if (a == b && b == c)
             System.out.println("all numbers are the same");
@@ -31,6 +70,9 @@ public class Main {
             } else
                 System.out.println("c is the biggest number");
         }
+
     }
-    }
+}
+
+
 
