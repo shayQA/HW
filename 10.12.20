@@ -1,0 +1,45 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        int a, b,num;
+        System.out.print("Please enter number: ");
+        Scanner num1 = new Scanner(System.in);
+        a = num1.nextInt();
+        System.out.print("Please enter number: ");
+        Scanner num2 = new Scanner(System.in);
+        b = num2.nextInt();
+        if(a>b)
+            System.out.println(a+" > "+b);
+        else if (a<b)
+            System.out.println(a+" < "+b);
+        else
+            System.out.println(a+" == "+b);
+        for(int i=5;i<=10;i++)
+            System.out.print(i+ " ");
+        System.out.print("\nPlease enter number: ");
+        Scanner num3 = new Scanner(System.in);
+        num = num3.nextInt();
+        while(num<=100)
+        {
+            System.out.print("Please enter number: ");
+            num= num3.nextInt();
+        }
+        for(int i=4;i<=100;i++)
+            if(i%2==0)
+                System.out.print(i+" ");
+        System.out.print("\nPlease enter number: ");
+        a = num1.nextInt();
+        System.out.print("Please enter number: ");
+        b = num2.nextInt();
+        while(a!=b) {
+            System.out.print("Please enter number: ");
+            a = num1.nextInt();
+            System.out.print("Please enter number: ");
+            b = num2.nextInt();
+        }
+        System.out.print(a+" == "+b);
+
+    }
+}
