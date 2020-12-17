@@ -1,0 +1,64 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        int length, width, perimeter, num = -1000;
+        float temperature;
+        //targil 1
+        do {
+            System.out.print(String.format("%d  ", num));
+            num++;
+        }
+        while (num <= 1000);
+        //targil 2
+        Scanner num1 = new Scanner(System.in);
+        do {
+            System.out.print("\nPlease enter length: ");
+            length = num1.nextInt();
+            System.out.print("Please enter width: ");
+            width = num1.nextInt();
+            System.out.print("Please enter perimeter: ");
+            perimeter = num1.nextInt();
+            if (length < 0 || width < 0 || perimeter < 0)
+                System.out.print("\nPlease enter positive numbers only. ");
+        }
+        while (2 * length + 2 * width != perimeter && length > 0 && width > 0 && perimeter > 0);
+        //targil 3
+        num = -1000;
+        while (true) {
+            System.out.print(String.format("%d  ", num));
+            num++;
+            if (num > 1000)
+                break;
+        }
+
+        while (true) {
+            System.out.print("\nPlease enter length: ");
+            length = num1.nextInt();
+            System.out.print("Please enter width: ");
+            width = num1.nextInt();
+            System.out.print("Please enter perimeter: ");
+            perimeter = num1.nextInt();
+            if (length < 0 || width < 0 || perimeter < 0)
+                System.out.print("\nPlease enter positive numbers only. ");
+            else {
+                if (2 * length + 2 * width == perimeter)
+                    break;
+            }
+        }
+        //targil 4
+        while (true) {
+            System.out.print("\nPlease enter temperature: ");
+            temperature = num1.nextFloat();
+            if (temperature < 35 || temperature > 42) {
+                System.out.print("out-of-range. ");
+                break;
+            }
+            if (temperature > 37.5 && temperature <= 42)
+                System.out.print("sick");
+            if (temperature > 35 && temperature <= 37.5)
+                System.out.print("healthy");
+        }
+    }
+}
