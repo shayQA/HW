@@ -1,0 +1,383 @@
+package com.company;
+
+import java.net.StandardSocketOptions;
+import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner num = new Scanner(System.in);
+        Scanner num2 = new Scanner(System.in);
+        Random r = new Random();
+        // מערך הוא מבנה נתונים שמאפשר שמירה של משתנים רבים מאותו טיפוס תחת אותו שם, כאשר כל אחד מהמשתנים מקבל מספר מזהה ייחודי. המערך מאפשר עבודה נוחה עם מידע שמורכב מחלקים רבים הזהים זה לזה.
+        //2
+        /*
+      int[]arry ={101,102,103,104,105};
+       //המספר 101 נמצא במקום ה0 והמספר 105 נמצא במקום ה4
+
+        //3
+        int[]arry ={2,4,6};
+        System.out.println(String.format("the second number = %d the lest number = %d ",arry[1],arry[arry.length-1]));
+
+        //4
+        //System.out.println(arr[arr.length]);
+
+         //5
+        int [] arry1= new int[20];
+        //6
+        String []str={"Welcome","To","Java"};
+
+        //7
+        int [] arry1= {-1,-2,-3,-4,-5};
+        for(int i=0;i<arry1.length;i++)
+            System.out.println(arry1[i]);
+
+
+        //8
+        int [] a={1,2,3,4,5,6,7,8,9,10};
+        for(int i=1;i<a.length;i=i+2)
+            System.out.println(a[i]);
+
+        //9
+        int [] a={1,2,3,4,5,6,7,8,9,10};
+        for(int i=a.length-1;i>=1;i=i-2)
+            System.out.println(a[i]);
+
+        //10
+        int []a=new int[3];
+        System.out.println("please enter 3 numbers  ");
+        for(int i=0;i<a.length;i++)
+            a[i]=num.nextInt();
+
+          //11
+        int[] a=new int[5];
+        int i;
+       for(i=0;i<a.length;i++)
+           a[i]=r.nextInt(50) + 1;
+        for(i=0;i<a.length;i++)
+            System.out.print(a[i]+" ");
+    //12
+        for(i=0;i<a.length;i++)
+        {
+            if(a[i]%2!=0)
+                break;;
+        }
+        if(i==a.length)
+            System.out.println("all numbers are even ");
+        else
+            System.out.println(" not all numbers are even ");
+
+        //13
+        int[] a=new int[6];
+        int[] b=new int[6];
+        int i,j;
+        System.out.println("please enter numbers");
+        for(i=0;i<a.length;i++)
+            a[i] = num.nextInt();
+        System.out.println("please enter another 6 numbers");
+        for(i=0;i<b.length;i++)
+             b[i]=num.nextInt();
+        for(i=0,j=0;i<a.length;i++,j++)
+        {
+            if(!(a[i]==b[j])||!(i==j))
+                break;
+        }
+        if(i==a.length)
+            System.out.println("The arrays are identical and in the correct order\n");
+        else
+            System.out.println("The arrays are not identical and not in the correct order\n");
+
+
+        //14
+        int[]secretCode={9,4,6};
+        int[] Anarrayofguesses=new int[3];
+        int i,j;
+        System.out.println("Enter 3 numbers to guess the code of the safe\n");
+      for(i=0;i<Anarrayofguesses.length;i++)
+          Anarrayofguesses[i]=num.nextInt();
+        for(i=0,j=0;i<secretCode.length;i++,j++)
+        {
+            if(!(secretCode[i]==Anarrayofguesses[j]))
+                break;
+        }
+        if(i==secretCode.length)
+            System.out.println("Access Granted\n");
+        else
+            System.out.println("Wrong\n");
+
+        //15
+        String Word;
+        System.out.println("please enter Word");
+        Word=num.nextLine();
+        System.out.println(Word.length());
+
+        //16
+        int num1;
+
+        // num1=num.nextInt();
+        char s;
+        int i = 0, c = 0, j = 0;
+        String[] str = {"abcdefghijklmnopqrstuvwxyz"};
+        char[] str1 = new char[26];
+        int[] aa = new int[26];
+        String chh;
+
+        for (i = 0; i < str.length; i++)
+            aa[i] = 0;
+
+        for (i = 0; i < str.length; i++) {
+            chh = str[i];
+
+            while (j < chh.length()) {
+                s = chh.charAt(j);
+                aa[s - 'a']++;
+                str1[s - 'a'] = str1[s - 'a'] = s;
+                j++;
+            }
+            j = 0;
+        }
+        for (i = 0; i < aa.length; i++) {
+            System.out.print(aa[i] + "->");
+            System.out.println(str1[i]);
+        }
+
+
+        //17
+        String []Arrayofchildren=new String[5];
+        int [] Grades=new int[5];
+        int num1;
+        System.out.println("Please enter 5 student names and their 5 grades\n");
+        for(int i=0;i< Grades.length;i++)
+        {
+            System.out.println("enter name ");
+            Arrayofchildren[i]=num.nextLine();
+            System.out.println("enter Grades ");
+              num1=num2.nextInt();
+            while(num1<0||num1>100)
+            {
+                System.out.println("The score that the Knesset is not correct here will change the score\n");
+                num1=num2.nextInt();
+            }
+            Grades[i]=num1;
+        }
+      for(int i=0;i<Grades.length;i++)
+          System.out.println(String.format("Student names=%s And their grades=%d",Arrayofchildren[i],Grades[i]));
+
+        //18
+        int [] MaxMinArray={10000,10000,-70000,-300,-1,-70000,500,20000000};
+        System.out.println(Arrays.stream(MaxMinArray).max());
+        System.out.println(Arrays.stream(MaxMinArray).min());
+        int max=MaxMinArray[0],min=MaxMinArray[0];
+         for(int i=1;i<MaxMinArray.length;i++)
+         {
+             if(max<MaxMinArray[i])
+                 max=MaxMinArray[i];
+             if(min>MaxMinArray[i])
+                 min=MaxMinArray[i];
+         }
+        System.out.println(String.format("max=%d,min=%d",max,min));
+
+
+
+
+
+
+        //19
+
+
+        String[] Words=new String[6];
+
+        String Word;
+        int index=-1,c=0,j=0,t=0;
+        System.out.println("Please enter 20 names\n");
+        for(int i=0;i<Words.length;i++)
+            Words[i]=num.nextLine();
+        System.out.println("please enter word");
+        Word=num2.nextLine();
+        for(int i=0;i<Words.length;i++)
+        {
+            if(Word.equals(Words[i]))
+              c++;
+        }
+
+        int [] indexim=new int[c];
+
+        for(int i=0;i<Words.length;i++)
+        {
+
+            if(c==1)
+            {
+                if(Word.equals(Words[i]))
+                    index=i;
+            }
+            else if(c>1) {
+                for (j=0;j<Words.length;j++) {
+                    if (Word.equals(Words[j])) {
+                        indexim[t] = j;
+                        t++;
+                    }
+                }
+                break;
+            }
+            else
+                break;;
+        }
+
+        if(c==1)
+        {
+            System.out.println(String.format("index=%d",index));
+        }
+        else if(c>1)
+        {
+        for(int i=0;i<c;i++)
+            System.out.println(String.format("index=%d",indexim[i]));
+        }
+        else
+            System.out.println(String.format("the array doesn't include the word =%s",Word));
+
+
+
+
+
+
+
+        //20shay
+     int []nums={1,2,3,4,5};
+     int Temporary,Temporary1;
+     Temporary=nums[nums.length-1];
+      for(int i=nums.length;i>1;i--)
+      {
+          nums[i-1]=nums[i-2];
+      }
+      nums[0]=Temporary;
+        for(int i=0;i<nums.length;i++)
+            System.out.print(nums[i]+" ");
+
+
+
+            //21
+        String[] SecretArray={"H","E","L","L","O"};
+        String str;
+        String[] Theword=new String[5];
+        for(int i=0;i<SecretArray.length;i++)
+              Theword[i]="-";
+        int j,num1=0,flag=0,i;
+        for(i=0;i<10;i++)
+        {
+            System.out.println("Insert a letter");
+               str=num.nextLine();
+               for(j=0;j<SecretArray.length;j++) {
+                   if (str.equals(SecretArray[j])) {
+                       Theword[j] = str;
+                       System.out.println("yes");
+                       flag = 1;
+                       num1++;
+                   }
+               }
+                   if(flag==0)
+                       System.out.println("no");
+
+                   flag=0;
+
+            for(int l=0;l<Theword.length;l++)
+                System.out.print(Theword[l]+" ");
+            System.out.println("\n");
+          if(num1==Theword.length)
+          {
+              System.out.println("You managed to guess the sentence you win");
+              break;
+          }
+        }
+
+     if(i==10&&num1!=Theword.length)
+         System.out.println("Game Over");
+         
+        //חלק ב"
+        //1
+        for(int i=0;i<5;i++)
+        {
+            System.out.println();
+            for(int j=1;j<=10;j++)
+                System.out.print(j+" ");
+        }
+
+
+
+        //2
+        String []Daysoftheweek={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+        for(int i=0;i<4;i++)
+        {
+            System.out.println();
+            for(int j=0;j<Daysoftheweek.length;j++)
+                System.out.print(Daysoftheweek[j]+" ");
+        }
+
+
+        //3
+        int i,j;
+        for(i=1;i<=10;i++)
+        {
+            for(j=1;j<=5;j++)
+                System.out.print(String.format("%5d",i*j));
+            System.out.println();
+        }
+
+
+        //4
+        int i,j,sum=1;
+        for(i=1;i<=1;i++)
+        {
+            System.out.println();
+            for(j=1;j<=10;j++) {
+                sum *= j;
+
+                System.out.print(String.format("%d ", sum));
+            }
+        }
+
+
+   ///5
+        int Length,width,i,j;
+        System.out.println("please enter Length and width");
+        Length=num.nextInt();
+        width=num2.nextInt();
+         for(i=0;i<Length;i++)
+         {
+             for(j=0;j<width;j++)
+                 System.out.print("*");
+             System.out.println("");
+         }
+
+
+        //6
+        int Length,width,i,j;
+        System.out.println("please enter Length and width");
+        Length=num.nextInt();
+        width=num2.nextInt();
+        for(i=0;i<Length;i++)
+        {
+            if(i==0||i==Length-1)
+                for(int k=0;k<width;k++)
+                    System.out.print("*");
+             else
+            {
+                for(j=0;j<width;j++)
+                {
+                    if(j==0||j==width-1)
+                        System.out.print("*");
+                    else
+                        System.out.print(" ");
+                }
+            }
+
+            System.out.println("");
+        }
+
+         */
+        
+
+    }
+}
