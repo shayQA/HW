@@ -375,6 +375,23 @@ public class Main {
 
             System.out.println("");
         }
+        
+        //7
+        
+        System.out.println("Please enter size: ");
+        int size=num.nextInt();
+        int i, j;
+        for (i = 1; i <= size; i++) {
+            for (j = size; j >= i + 1; j--)
+                System.out.print(" ");
+            System.out.print("*");
+            if (i != 1) {
+                for (j = 1; j <= i * 2 - 3; j++)
+                    System.out.print("*");
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
 
          */
         
