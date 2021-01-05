@@ -1,0 +1,71 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    private static void PrintSentence()
+    {
+        System.out.println("Hello world!");
+    }
+
+    private static void Print_1_100(){
+        for (int i=1;i<=100;i++)
+            System.out.print(i+" ");
+        System.out.print("\n");
+    }
+    private static void ZugiOrNot(Scanner num)
+    {
+        System.out.println("please enter a number: ");
+        int number=num.nextInt();
+        if(number%2==0)
+            System.out.println("Zugi.");
+        else
+            System.out.println("Not zugi.");
+    }
+
+    private static void ZugiOrNot_2(int number)
+    {
+        if(number%2==0)
+            System.out.println("Zugi.");
+        else
+            System.out.println("Not zugi.");
+    }
+
+    private static void A()
+    {
+        System.out.println("Calling function B");
+        //B();
+    }
+
+    private static void B()
+    {
+        System.out.println("Calling function A");
+        //A();
+    }
+
+    public static void main(String[] args) {
+        Scanner num = new Scanner(System.in);
+        //1
+        PrintSentence();
+        //2
+        Print_1_100();
+        //3
+        ZugiOrNot(num);
+        //4
+        System.out.println("please enter a number: ");
+        int number=num.nextInt();
+        ZugiOrNot_2(number);
+        //5
+
+        //With debugger options, the difference between "Step into" and "Step over" is only noticeable if you run into a function call.
+        //"Step into" means that the debugger steps into the function, and "Step over" just moves the debugger to the next line in the same Java action.
+
+        //6
+        //This is not the same x, because what happens in a function is for the function only and what is defined in main is for main only.
+
+        //7
+        // This would cause an endless loop because the two functions will never stop calling etch other.
+        A();
+    }
+}
