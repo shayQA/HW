@@ -1,0 +1,105 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    static Scanner s= new Scanner(System.in); // scanner here in parent
+    static Random r = new Random();
+    private static void printBiggest()
+    {
+        System.out.println("I am the biggest of them all!");
+    }
+
+    public static String howManyDigits(float num)
+    {
+        String number=String.valueOf(num);
+        System.out.println(number);
+        String newNumber="";
+        for(int i=0;i<number.length();i++)
+        {
+            if(!(number.charAt(i)=='.'))
+                newNumber+="*";
+            else
+                newNumber+=".";
+        }
+        return newNumber;
+    }
+
+    public static int howManyDigits(int num)
+    {
+        int c=0;
+        while(num>0)
+        {
+            num/=10;
+            c++;
+        }
+        return c;
+    }
+
+    public static String getString(String msg,Scanner s)
+    {
+        System.out.println("Please enter string: ");
+        msg=s.nextLine();
+        return msg;
+    }
+
+    public static boolean isLonger(int arr[],int len)
+    {
+        int c=0;
+        for(int i=0;i< arr.length;i++)
+            c++;
+        if(c<len)
+            return false;
+        return true;
+    }
+
+    public static boolean isLonger(double arr1[],int len)
+    {
+        int c=0;
+        for(int i=0;i< arr1.length;i++)
+            c++;
+        if(c<len)
+            return false;
+        return true;
+    }
+
+    public static boolean arrayEqual(int []arr,int []arr2)
+    {
+        if(arr.length==arr2.length)
+        {
+            for(int i=0;i<arr.length;i++)
+                if(!(arr[i]==arr2[i]))
+                    return false;
+        }
+        else
+            return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+        //3
+        String msg="";
+        System.out.println(getString(msg,s));
+        //4
+        System.out.println("Please enter a number: ");
+        System.out.println(String.format("There are %d digits.",howManyDigits(s.nextInt())));
+
+
+        //4 etgar
+        System.out.println("Please enter float number for stars: ");
+        System.out.println(howManyDigits(s.nextFloat()));
+
+        //5
+        int []arr={1,2,3,4};
+        int []arr2={1,2,3,4};
+        double []arr1={0.1,0.2,0.3,0.4};
+        int len=5;
+        System.out.println("int: "+isLonger(arr,len));
+        System.out.println("float: "+isLonger(arr1,len));
+        //6
+        System.out.println("2 arrays: "+arrayEqual(arr,arr2));
+
+    }
+}
