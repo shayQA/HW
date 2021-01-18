@@ -1,0 +1,348 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    static Scanner s= new Scanner(System.in);
+    static Scanner s1= new Scanner(System.in);
+    static Random r = new Random();
+    static String magicWord="irena";
+
+
+    //25
+    public static int recursion(int num)
+    {
+        if(num == 0)
+            return 1;
+        else
+            return num * recursion(num - 1);
+    }
+
+    //23
+    public static void sumMatrix(int matrix[][])
+    {
+        int sum=0;
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                sum+=matrix[i][j];
+        System.out.println("The sum of the matrix is: "+sum);
+    }
+
+    //22
+    public static boolean password(char newArray[])
+    {
+        int c1=0,c2=0,c3=0;
+        if(newArray.length>=8)
+        {
+            for(int i=0;i<newArray.length;i++)
+                if((newArray[i]>='0' && newArray[i]<='9' || newArray[i]>='a' && newArray[i]<='z' || newArray[i]>='A' && newArray[i]<='Z'))
+                {
+                    if(newArray[i]>='0' && newArray[i]<='9')
+                        c1++;
+                    else if(newArray[i]>='a' && newArray[i]<='z')
+                        c2++;
+                    else
+                        c3++;
+                }
+            if(c1>0 && (c2>0 || c3>0))
+                return true;
+        }
+        else
+            return false;
+        return false;
+    }
+
+    //21
+    public static int getNumberForSum(int num)
+    {
+        int sum=0;
+        while(num>0)
+        {
+            sum+=num%10;
+            num/=10;
+        }
+        return sum;
+    }
+
+    //20
+    public static void multiplyZugi(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+            if(arr[i]%2==0) {
+                arr[i] *= 2;
+                System.out.print(arr[i] + " ");
+            }
+        System.out.print("\n");
+    }
+    public static void addOne(int arr[])
+    {
+        arr[arr.length-1]++;
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+        System.out.print("\n");
+    }
+    public static void setZero(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+            if(arr[i]%2==1)
+                arr[i]=0;
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+    }
+
+    //19
+    public static void printWord()
+    {
+        System.out.println(magicWord);
+    }
+    public static void changeWord(String str)
+    {
+        magicWord=str;
+    }
+
+    //17
+    public static void AddNewChar1(String str)
+    {
+        str+="@@@";
+        AddNewChar2(str);
+
+    }
+    public static void AddNewChar2(String str)
+    {
+        str+="**";
+        AddNewChar3(str);
+
+    }
+    public static void AddNewChar3(String str)
+    {
+        str+="#";
+        System.out.println(str);
+
+    }
+
+    //16
+    public static int randomize(int arr[])
+    {
+        int num=r.nextInt(arr.length-0)+0;
+        return arr[num];
+    }
+
+    //15
+    public static Scanner getScanner()
+    {
+        Scanner s3=new Scanner(System.in);
+        return s3;
+    }
+
+    //14
+    public static void numberType(int a)
+    {
+        System.out.println(a);
+    }
+    public static void numberType(float a)
+    {
+        System.out.println(a);
+    }
+    public static void numberType(double a)
+    {
+        System.out.println(a);
+    }
+
+    //12
+    public static void hello()
+    {
+        System.out.println("Hello ");
+        world();
+    }
+    public static void world()
+    {
+        System.out.println("world");
+    }
+
+    //11
+    public static void Question11(int num)
+    {
+        for(int i=num;i>0;i--)
+            if((num%i)==0 && i!=num)
+                System.out.print(" "+i);
+    }
+
+    //10
+    public static boolean ArrayAndNumber(int arr[],int num)
+    {
+        for(int i=0;i<arr.length;i++)
+            if(arr[i]==num)
+                return true;
+            return false;
+    }
+
+    //9
+    public static float avg(int a,int b,int c)
+    {
+        return (float)(a+b+c)/3;
+    }
+
+    //8
+    public static void calc(int a, int b, char c)
+    {
+        if(c=='+')
+            System.out.println(String.format("%d + %d = %d",a,b,a+b));
+        else if(c=='-')
+        {
+            if(b>a)
+                System.out.println(String.format("%d - %d = %d",b,a,b-a));
+            else
+                System.out.println(String.format("%d - %d = %d",a,b,a-b));
+        }
+        else
+            System.out.println("The char that was received was not + or -");
+    }
+
+    //7
+    public static void multiply(int a,int b)
+    {
+        System.out.println(String.format("%d * %d = %d",a,b,a*b));
+    }
+
+//6
+    public static int changeNumber(int num)
+    {
+        num++;
+        return num;
+    }
+    //4+5
+    public static void printNum(int num)
+    {
+        System.out.println(num);
+    }
+    //3
+    public static void greet()
+    {
+        System.out.println("good morning!");
+    }
+
+    public static void main(String[] args) {
+/*
+        //1
+        // פונקציה היא חלק שמקל את הקידוד ואת הארגון הנכון של תכנית מחשב.
+        // כדאי להשתמש בפונקציות בכדי לקצר פעולות שחוזרות על עצמן עם משתנים שונים או במידה וצריך לעשות פעולות זהות בקידוד.
+
+        //2
+        //main
+
+        //3
+        greet();
+
+        //4
+        System.out.println("Please enter a number: ");
+        printNum(s.nextInt());
+
+        //5
+        for(int i=1;i<=10;i++)
+            printNum(i);
+        //6
+        int k=5;
+        changeNumber(k);
+        System.out.println("k=" +k);
+        //נשאר 5 k
+
+        //7
+          System.out.println("Please enter 2 numbers: ");
+       multiply(s.nextInt(),s.nextInt());
+
+       //8
+       System.out.println("Please enter 2 numbers and + or -: ");
+        int a=s.nextInt();
+        int b=s.nextInt();
+        char c=s1.next().charAt(0);
+        calc(a,b,c);
+
+        //9
+        System.out.println("Please enter 3 number for average calc: ");
+        System.out.println(avg(s.nextInt(),s.nextInt(),s.nextInt()));
+
+        //10
+        int []arr={1,2,3,4,5};
+        System.out.println("Please enter a number: ");
+        System.out.println(ArrayAndNumber(arr,s.nextInt()));
+
+        //11
+        System.out.println("please enter a number: ");
+        Question11(s.nextInt());
+
+
+        //12
+        hello();
+
+        //מתי שנרצה ליצור מצב של overloading או שנרצה להשתמש באותו שם פונקציה למשתנים שונים.
+
+         //14
+        numberType(5);
+        numberType(1.2);
+        numberType(555.555);
+
+        //15
+        System.out.println(getScanner().nextLine());
+
+        //16
+        int arr[]={10,8,20,5};
+        System.out.println("The number that was chosen from the array: ");
+        System.out.println(randomize(arr));
+
+        //17
+        String str="irena";
+        AddNewChar1(str);
+
+              //18
+        // משתנה גלובלי נראה על ידי כול פנוקציה וניתן להשתמש ולשנות אותה בכול אחת מהן בעוד משתנה שהוגדר בתוך פונקציה לדוגמא: main ניתן לשינוי אך ורק בתוך אותה פונקציה ולא ניתן לשנות אותו על ידי פונקציה אחרת.
+
+        //19
+        printWord();
+        changeWord("Irena10");
+        System.out.println(magicWord);
+
+        //20
+        int arr[]={2,6,7,8,34,16};
+        multiplyZugi(arr);
+        addOne(arr);
+        setZero(arr);
+        // המערך הראשי משתנה
+
+        //21
+        System.out.println("Enter number for sum: ");
+        System.out.println(getNumberForSum(s.nextInt()));
+
+        //22
+        System.out.println("Please enter password: ");
+        String str;
+        str=s.nextLine();
+        char [] newArray=new char[str.length()];
+        for(int i=0;i<str.length();i++)
+            newArray[i]=str.charAt(i);
+        System.out.println(password(newArray));
+
+        //23
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = r.nextInt(100);
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.print("\n");
+        }
+        sumMatrix(matrix);
+
+        //24
+        //פונקציה רקורסיבית היא פונקציה הקוראת לעצמה בתוך עצמה.
+
+        //25
+        System.out.println("Please enter the number for recursion func: ");
+        System.out.println(recursion(s.nextInt()));
+*/
+
+
+
+
+    }
+}
