@@ -1,0 +1,94 @@
+package com.company;
+
+public class Tv {
+    private final float m_tv_size;
+    private final String m_model;
+    private int m_current_channel;
+    private boolean m_tv_on;
+    private final double price;
+
+
+    //ctor 1
+    public Tv(float m_tv_size, String m_model, int m_current_channel, boolean m_tv_on, double price) {
+        this.m_tv_size = m_tv_size;
+        this.m_model = m_model;
+        this.m_current_channel = m_current_channel;
+        this.m_tv_on = m_tv_on;
+        this.price=price;
+    }
+
+    //ctor 2
+    public Tv(float m_tv_size, String m_model, int m_current_channel)
+    {
+        this(m_tv_size,m_model,m_current_channel,false);
+    }
+
+    //ctor 3
+    public Tv(float m_tv_size, String m_model) {
+
+        this(m_tv_size,m_model,1,false);
+    }
+
+    //ctor 4
+    public Tv(float m_tv_size) {
+
+        this(m_tv_size,"LG",1,false);
+    }
+
+    //5
+    public Tv() {
+
+        this(65,"LG",1,false);
+    }
+
+    //6
+    public Tv(float m_tv_size, String m_model, int m_current_channel, boolean m_tv_on) {
+       this(m_tv_size,m_model,m_current_channel,m_tv_on,888);
+}
+
+    public double getPrice() {
+
+        return price;
+    }
+
+    public boolean isM_tv_on() {
+
+        return m_tv_on;
+    }
+
+    public void setM_tv_on(boolean m_tv_on) {
+
+        this.m_tv_on = m_tv_on;
+    }
+
+    public float getM_tv_size() {
+        return m_tv_size;
+    }
+
+    public String getM_model() {
+        return m_model;
+    }
+
+    public int getM_current_channel() {
+        return m_current_channel;
+    }
+
+    public void setM_current_channel(int new_channel)
+    {
+        if(new_channel>0)
+            this.m_current_channel=new_channel;
+    }
+
+    @Override
+    public String toString() {
+        return "Tv{" +
+                "m_tv_size=" + m_tv_size +
+                ", m_model='" + m_model + '\'' +
+                ", m_current_channel=" + m_current_channel +
+                ", m_tv_on=" + m_tv_on +
+                ", price=" + price +
+                '}';
+    }
+
+
+}
