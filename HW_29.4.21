@@ -1,0 +1,163 @@
+package com.company;
+import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+public class Main {
+
+    public static void showall()
+    {
+        String url = "jdbc:sqlite:C:/database/homework.db";
+
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            if (conn != null) {
+                String sql = "SELECT * FROM Drinks";
+
+
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+                while (rs.next()) {
+                    System.out.println(rs.getInt("id") + "\t" +
+                            rs.getString("name"));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    public static void insertinto(int id,String name)
+    {
+        String url = "jdbc:sqlite:C:/database/homework.db";
+
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            if (conn != null) {
+                String sql = "INSERT INTO Drinks(id,Name) VALUES ("+id+",'"+name+"');";
+
+
+                Statement stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                System.out.println(result + " record updated.");
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void update(int id ,String name)
+    {
+        String url = "jdbc:sqlite:C:/database/homework.db";
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            // check if connection succeed
+            if (conn != null) {
+
+                // prepare query
+                String sql = "UPDATE Drinks SET Name = '"+name+"' WHERE id = "+id+";";
+                Statement stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                System.out.println(result + " record updated.");
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void remove(int id)
+    {
+        String url = "jdbc:sqlite:C:/database/homework.db";
+
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            if (conn != null) {
+                String sql = "DELETE FROM Drinks WHERE id = "+id+";";
+
+
+                Statement stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                System.out.println(result + " record updated.");
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void freestyle(int id)
+    {
+        String url = "jdbc:sqlite:C:/database/homework.db";
+
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            if (conn != null) {
+                String sql = "UPDATE Drinks SET id="+id+" WHERE NAME LIKE 'Pa%'";
+
+
+                Statement stmt = conn.createStatement();
+                int result = stmt.executeUpdate(sql);
+                System.out.println(result + " record updated.");
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
+
+
+
+    public static void main(String[] args) {
+
+        //createNewDatabase();
+        Scanner s=new Scanner(System.in);
+        Scanner s1=new Scanner(System.in);
+        String url = "jdbc:sqlite:C:/database/homework.db";
+        System.out.println("(1) show all records.");
+        System.out.println("(2) insert record.");
+        System.out.println("(3) update record.");
+        System.out.println("(4) remove record.");
+        System.out.println("(5) free-style query.");
+        System.out.println("(6) exit.");
+        int a=s.nextInt();
+
+        while(a!=6) {
+            if (a == 1) {
+                showall();
+            }
+            if (a == 2) {
+                System.out.println("Enter id and name: ");
+                int id=s.nextInt();
+                String name=s1.nextLine();
+                insertinto(id,name);
+            }
+            if (a == 3) {
+                System.out.println("Enter id to update its name: ");
+                int id=s.nextInt();
+                String name=s1.nextLine();
+                update(id,name);
+            }
+            if (a == 4) {
+                System.out.println("Enter id to remove: ");
+                int id=s.nextInt();
+                remove(id);
+            }
+            if(a==5)
+            {
+                System.out.println("Enter id: ");
+                int id=s.nextInt();
+                freestyle(id);
+            }
+
+            showall();
+           a=s.nextInt();
+        }
+
+    }
+
+}
